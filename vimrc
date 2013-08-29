@@ -6,6 +6,7 @@ Bundle 'desert-warm-256'
 Bundle 'tomasr/molokai'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/BufOnly.vim'
 
 inoremap jj <Esc>
 nnoremap <C-J> <C-W><C-J>
