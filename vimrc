@@ -6,7 +6,6 @@ Bundle 'desert-warm-256'
 Bundle 'tomasr/molokai'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'scrooloose/nerdtree'
-Bundle 'craigemery/dotFiles/blob/master/vim/plugin/autotag.vim'
 " vim scripts plugins
 Bundle 'vim-scripts/BufOnly.vim'
 Bundle 'L9'
