@@ -1,3 +1,4 @@
+set nocompatible
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
@@ -6,19 +7,28 @@ Bundle 'desert-warm-256'
 Bundle 'tomasr/molokai'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'scrooloose/nerdtree'
-Bundle 'craigemery/dotFiles/blob/master/vim/plugin/autotag.vim'
 " vim scripts plugins
 Bundle 'vim-scripts/BufOnly.vim'
 Bundle 'L9'
 Bundle 'vim-scripts/FuzzyFinder'
-Bundle 'terryma/vim-smooth-scroll'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'vim-scripts/c.vim'
+Bundle 'terryma/vim-smooth-scroll'
+Bundle 'steffanc/cscopemaps.vim'
 
 inoremap jj <Esc>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+"open tag list, move to tag window
+nmap <F4> :TlistToggle <cr> 5<C-h>
+"open source tree explorer
+nmap <F5> :NERDTreeToggle <cr>
+set tags=./tags;/
+
+"let mapleader=","
+"nnoremap <leader>w <C-w>v<C-w>l
 
 " smooth scrolling: 
 " params are distance, duration, speed(how many lines to scroll
@@ -39,7 +49,6 @@ set expandtab
 set wrap
 set linebreak
 set nolist
-set nocompatible
 set relativenumber
 set undofile
 set encoding=utf-8
@@ -49,17 +58,31 @@ set smartcase
 set ruler
 set showcmd
 set autoread
+set nobackup
+"set noswapfile
 
 set textwidth=80
 set colorcolumn=81
 set incsearch
 set laststatus=2
 
-:set statusline=%<%f%=%([%{Tlist_Get_Tagname_By_Line()}]%)
+set statusline=
+set statusline +=%1*\ %n\ %*            "buffer number
+"set statusline +=%5*%{&ff}%*            "file format
+"set statusline +=%3*%y%*                "file type
+set statusline +=%4*\ %<%F%*            "full path
+set statusline +=[%{Tlist_Get_Tagname_By_Line()}]
+set statusline +=%2*%m%*                "modified flag
+set statusline +=%1*%=%5l%*             "current line
+set statusline +=%2*/%L%*               "total lines
+set statusline +=%1*%4v\ %*             "virtual column number
+"set statusline +=%2*0x%04B\ %*          "character under cursor
+
+"set statusline=%<%f%=%([%{Tlist_Get_Tagname_By_Line()}]%)
+
 
 colorscheme vividchalk
 
 syntax on
 
 filetype plugin indent on
-
