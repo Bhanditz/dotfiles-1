@@ -78,8 +78,8 @@ set statusline +=%2*/%L%*               "total lines
 set statusline +=%1*%4v\ %*             "virtual column number
 "set statusline +=%2*0x%04B\ %*          "character under cursor
 
-"set statusline=%<%f%=%([%{Tlist_Get_Tagname_By_Line()}]%)
-
+"default coloumn for csupport.vim end of line comment (\cl) = 0 (doesn't work?)
+"let g:C LineEndCommColDefault=0
 
 colorscheme vividchalk
 
