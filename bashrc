@@ -106,4 +106,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# add hook for pkgfile
+source /usr/share/doc/pkgfile/command-not-found.bash
+
+# history completion bound to arrow keys
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
