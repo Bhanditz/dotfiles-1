@@ -2,6 +2,9 @@ set nocompatible
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+" use Vundle to handle plugins - install from https://github.com/gmarik/vundle
+" run :BundleInstall after installing Vundle to install other plugins
+
 Bundle 'gmarik/vundle'
 Bundle 'desert-warm-256'
 Bundle 'tomasr/molokai'
