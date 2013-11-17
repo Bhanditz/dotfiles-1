@@ -60,10 +60,22 @@ set smartcase
 set ruler
 set showcmd
 set autoread
+
 "keep extra files out of the way. double trailing / enables name collision
 "avoidance
+if !isdirectory($HOME . '/.vim/backup')
+    call mkdir($HOME . '/.vim/backup', "p")
+endif
 set backupdir=~/.vim/backup//
+
+if !isdirectory($HOME . '/.vim/swap')
+    call mkdir($HOME . '/.vim/swap', "p")
+endif
 set directory=~/.vim/swap//
+
+if !isdirectory($HOME . '/.vim/undo')
+    call mkdir($HOME . '/.vim/undo', "p")
+endif
 set undodir=~/.vim/undo//
 set undofile
 
