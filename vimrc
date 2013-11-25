@@ -21,6 +21,8 @@ Bundle 'vim-scripts/scons.vim'
 Bundle 'terryma/vim-smooth-scroll'
 Bundle 'steffanc/cscopemaps.vim'
 
+Bundle 'lekv/vim-clewn'
+
 set tags=./tags;/
 
 " stop c.vim messing with C-j
