@@ -1,0 +1,7 @@
+[user]
+	email = matalangilbert@gmail.com
+	name = Mat Gilbert
+[core]
+	editor = vim
+[color]
+	ui = true
