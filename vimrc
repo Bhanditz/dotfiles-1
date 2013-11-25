@@ -22,7 +22,6 @@ Bundle 'terryma/vim-smooth-scroll'
 Bundle 'steffanc/cscopemaps.vim'
 
 Bundle 'lekv/vim-clewn'
-
 set tags=./tags;/
 
 " stop c.vim messing with C-j
@@ -109,6 +108,11 @@ set statusline +=%1*%4v\ %*             "virtual column number
 "let g:C LineEndCommColDefault=0
 
 colorscheme vividchalk
+
+"gvim settings
+if has("gui_running")
+    set guifont=Anonymous\ Pro\ 14 
+endif
 
 syntax on
 filetype plugin indent on
