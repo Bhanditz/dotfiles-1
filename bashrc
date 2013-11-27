@@ -40,7 +40,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -106,11 +106,16 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# add hook for pkgfile
-source /usr/share/doc/pkgfile/command-not-found.bash
+# add hook for pkgfile. Only do this on Arch TODO: tested only on Ubuntu
+if [[ "`uname -v`" != *Ubuntu* ]]; then
+    source /usr/share/doc/pkgfile/command-not-found.bash
+fi
 
 # history completion bound to arrow keys
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
