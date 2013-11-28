@@ -55,7 +55,7 @@ set linebreak
 set nolist
 set relativenumber
 set encoding=utf-8
-set cursorline
+set nocursorline "fullscreen line at cursor position
 set ignorecase
 set smartcase
 set ruler
