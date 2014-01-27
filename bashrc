@@ -119,3 +119,6 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
+
+# start (ssh) keychain/authentication agent
+eval $(keychain --eval --agents ssh -Q --quiet id_ecdsa)
