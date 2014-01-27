@@ -6,9 +6,13 @@ call vundle#rc()
 " run :BundleInstall after installing Vundle to install other plugins
 
 Bundle 'gmarik/vundle'
+" colorschemes
 Bundle 'desert-warm-256'
 Bundle 'tomasr/molokai'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'sjl/badwolf'
+
+" filetree browser
 Bundle 'scrooloose/nerdtree'
 " Bundle 'craigemery/dotFiles/blob/master/vim/plugin/autotag.vim'
 " vim scripts plugins
@@ -20,8 +24,12 @@ Bundle 'vim-scripts/c.vim'
 Bundle 'vim-scripts/scons.vim'
 Bundle 'terryma/vim-smooth-scroll'
 Bundle 'steffanc/cscopemaps.vim'
+"Bundle 'Valloric/YouCompleteMe'
+
+" Bundle 'scrooloose/syntastic'
 
 Bundle 'lekv/vim-clewn'
+
 set tags=./tags;/
 
 " stop c.vim messing with C-j
@@ -41,10 +49,11 @@ noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 set t_Co=256
+set background=dark
 set autoindent
 set backspace=indent,eol,start
 set smartindent
-set tabstop=8
+"set tabstop=4
 set expandtab
 set softtabstop=4
 set shiftwidth=4
@@ -55,13 +64,18 @@ set linebreak
 set nolist
 set relativenumber
 set encoding=utf-8
-set nocursorline "fullscreen line at cursor position
+set cursorline "fullscreen line at cursor position
 set ignorecase
 set smartcase
 set ruler
 set showcmd
 set autoread
+set wildmenu " visual autocomplete menu
+set showmatch " highlight matching brackets
 
+" enable backup files
+set backup
+set writebackup
 "keep extra files out of the way. double trailing / enables name collision
 "avoidance
 if !isdirectory($HOME . '/.vim/backup')
@@ -89,6 +103,11 @@ set colorcolumn=81
 set incsearch
 set laststatus=2
 
+"allow per directory .vimrc
+set exrc
+"disable insecure commmands in local .vimrc files
+set secure
+
 " use ctags before cscope
 set csto=0
 
@@ -101,7 +120,9 @@ set statusline +=[%{Tlist_Get_Tagname_By_Line()}]
 set statusline +=%2*%m%*                "modified flag
 set statusline +=%1*%=%5l%*             "current line
 set statusline +=%2*/%L%*               "total lines
+
 set statusline +=%1*%4v\ %*             "virtual column number
+set statusline +=%*
 "set statusline +=%2*0x%04B\ %*          "character under cursor
 
 "default coloumn for csupport.vim end of line comment (\cl) = 0 (doesn't work?)
@@ -121,10 +142,15 @@ filetype plugin indent on
 
 " keymaps last to override any plugin settings
 inoremap jj <Esc>
+" move by one visual line at a time
+nnoremap j gj
+nnoremap k gk
+
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-h> <C-W>h
+nnoremap <Space> <PageDown>
 "open tag list, move to tag window
 nmap <F4> :TlistToggle <cr> 5<C-h>
 "open source tree explorer
