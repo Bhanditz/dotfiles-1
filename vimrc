@@ -24,7 +24,7 @@ Bundle 'vim-scripts/c.vim'
 Bundle 'vim-scripts/scons.vim'
 Bundle 'terryma/vim-smooth-scroll'
 Bundle 'steffanc/cscopemaps.vim'
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'ervandew/supertab'
 
 " Bundle 'scrooloose/syntastic'
 
@@ -139,7 +139,6 @@ syntax on
 filetype plugin indent on
 
 
-
 " keymaps last to override any plugin settings
 inoremap jj <Esc>
 " move by one visual line at a time
@@ -151,7 +150,12 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-h> <C-W>h
 nnoremap <Space> <PageDown>
-"open tag list, move to tag window
+" open tag list, move to tag window
 nmap <F4> :TlistToggle <cr> 5<C-h>
-"open source tree explorer
+" open source tree explorer
 nmap <F5> :NERDTreeToggle <cr>
+
+" useful defaults to remember
+" gt -> tabnext
+" gT -> tabprevious
+" {n}gt go to tab in position n
