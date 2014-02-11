@@ -114,3 +114,6 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export JAVA_HOME="/opt/jdk1.8.0"
+export PATH=$PATH:$JAVA_HOME/bin
