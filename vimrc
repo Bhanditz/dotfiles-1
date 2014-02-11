@@ -18,10 +18,17 @@ Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/c.vim'
 Bundle 'vim-scripts/scons.vim'
+Bundle 'vim-scripts/a.vim'
 Bundle 'terryma/vim-smooth-scroll'
 Bundle 'steffanc/cscopemaps.vim'
 Bundle 'ervandew/supertab'
+Bundle 'kien/ctrlp.vim'
 " Bundle 'scrooloose/syntastic'
+
+" a.vim doesn't open file which doesn't exist
+let g:alternateNoDefaultAlternate = 1
+" a.vim search path - extend to include '..'
+let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:..'
 
 set tags=./tags;/
 
