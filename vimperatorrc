@@ -3,8 +3,7 @@
 highlight Hint font-size: 11px; color: black; font-weight: bold; font-family: Helvetica, Arial, sans-serif; border: 1px solid #E3BE23; background-color: #FFEBB6; text-transform: uppercase
 highlight HintActive background-color: transparent
 highlight HintElem background-color: transparent
-set hintchars=jklasdfgyuiopqwertnmzxcvb
-source! $HOME/.vimperatorrc.local
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+source! /home/fft/.vimperatorrc.local
 
 " vim: set ft=vimperator:
-
