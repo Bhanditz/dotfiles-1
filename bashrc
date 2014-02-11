@@ -106,8 +106,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# add hook for pkgfile
+# add hook for pkgfile. TODO Only do this on Arch
+#if [ -f /usr/share/doc/pkgfile/command-not-found.bash ]; then
 source /usr/share/doc/pkgfile/command-not-found.bash
+#fi
 
 # history completion bound to arrow keys
 bind '"\e[A": history-search-backward'
@@ -115,5 +117,16 @@ bind '"\e[B": history-search-forward'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+<<<<<<< HEAD
 export JAVA_HOME="/opt/jdk1.8.0"
 export PATH=$PATH:$JAVA_HOME/bin
+=======
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
+export EDITOR=vim
+
+# start (ssh) keychain/authentication agent
+eval $(keychain --eval --agents ssh -Q --quiet)
+
+command fortune -a | cowsay
+>>>>>>> a2fa7f3aba6c176256e93b202074d9b9f7eff616
