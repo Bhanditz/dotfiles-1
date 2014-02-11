@@ -14,7 +14,7 @@ Bundle 'scrooloose/nerdtree'
 " vim scripts plugins
 Bundle 'vim-scripts/BufOnly.vim'
 Bundle 'L9'
-Bundle 'vim-scripts/FuzzyFinder'
+"Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/c.vim'
 Bundle 'vim-scripts/scons.vim'
