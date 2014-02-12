@@ -30,7 +30,7 @@ Bundle 'Lokaltog/vim-easymotion'
 " a.vim doesn't open file which doesn't exist
 let g:alternateNoDefaultAlternate = 1
 " a.vim search path - extend to include '..'
-let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:..'
+let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:..,code/'
 
 " EasyMotion key mappings
 map f <Plug>(easymotion-bd-fl)
