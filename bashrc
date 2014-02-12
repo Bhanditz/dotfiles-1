@@ -117,10 +117,8 @@ bind '"\e[B": history-search-forward'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-<<<<<<< HEAD
 export JAVA_HOME="/opt/jdk1.8.0"
 export PATH=$PATH:$JAVA_HOME/bin
-=======
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 export EDITOR=vim
@@ -129,4 +127,3 @@ export EDITOR=vim
 eval $(keychain --eval --agents ssh -Q --quiet)
 
 command fortune -a | cowsay
->>>>>>> a2fa7f3aba6c176256e93b202074d9b9f7eff616
