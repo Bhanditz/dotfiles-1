@@ -107,9 +107,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # add hook for pkgfile. TODO Only do this on Arch
-#if [ -f /usr/share/doc/pkgfile/command-not-found.bash ]; then
-source /usr/share/doc/pkgfile/command-not-found.bash
-#fi
+if [ -f /usr/share/doc/pkgfile/command-not-found.bash ]; then
+    source /usr/share/doc/pkgfile/command-not-found.bash;
+fi
 
 # history completion bound to arrow keys
 bind '"\e[A": history-search-backward'

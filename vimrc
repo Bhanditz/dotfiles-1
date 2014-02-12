@@ -152,6 +152,9 @@ nnoremap <Space> <PageDown>
 nmap <F4> :TlistToggle <cr> 5<C-h>
 " open source tree explorer
 nmap <F5> :NERDTreeToggle <cr>
+ 
+" open tag in new vertical split
+map <leader>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " useful defaults to remember
 " gt -> tabnext
