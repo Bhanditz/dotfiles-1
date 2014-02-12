@@ -31,14 +31,13 @@ let g:alternateNoDefaultAlternate = 1
 " a.vim search path - extend to include '..'
 let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:..'
 
-
 " EasyMotion key mappings
 map f <Plug>(easymotion-bd-fl)
 map t <Plug>(easymotion-bd-tl)
 map s <Plug>(easymotion-s2)
 " use these keys as labels
 let g:EasyMotion_keys = 'asdfjkl;ghqweruioptyzxcvbnm'
-"remove greying out when displaying jump letters
+" remove greying out when displaying jump letters
 "let g:EasyMotion_do_shade = 0
 " manually set up key mapping
 let g:EasyMotion_do_mapping = 0
@@ -46,6 +45,10 @@ let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_enter_jump_first = 1
 
 set tags=./tags;/
+
+" allow project .vimrc files
+set exrc
+set secure
 
 " stop c.vim messing with C-j
 let g:C_Ctrl_j = 'off'
