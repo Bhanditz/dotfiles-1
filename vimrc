@@ -14,14 +14,36 @@ Bundle 'scrooloose/nerdtree'
 " vim scripts plugins
 Bundle 'vim-scripts/BufOnly.vim'
 Bundle 'L9'
-Bundle 'vim-scripts/FuzzyFinder'
+"Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'vim-scripts/taglist.vim'
-Bundle 'vim-scripts/c.vim'
+"Bundle 'vim-scripts/c.vim'
 Bundle 'vim-scripts/scons.vim'
+Bundle 'vim-scripts/a.vim'
 Bundle 'terryma/vim-smooth-scroll'
 Bundle 'steffanc/cscopemaps.vim'
 Bundle 'ervandew/supertab'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'scrooloose/syntastic'
+
+" a.vim doesn't open file which doesn't exist
+let g:alternateNoDefaultAlternate = 1
+" a.vim search path - extend to include '..'
+let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,sfr:..'
+
+
+" EasyMotion key mappings
+map f <Plug>(easymotion-bd-fl)
+map t <Plug>(easymotion-bd-tl)
+map s <Plug>(easymotion-s2)
+" use these keys as labels
+let g:EasyMotion_keys = 'asdfjkl;ghqweruioptyzxcvbnm'
+"remove greying out when displaying jump letters
+"let g:EasyMotion_do_shade = 0
+" manually set up key mapping
+let g:EasyMotion_do_mapping = 0
+" jump to 'a'
+let g:EasyMotion_enter_jump_first = 1
 
 set tags=./tags;/
 
@@ -31,7 +53,7 @@ let g:C_Ctrl_j = 'off'
 " works in conjunction with vim-scripts/scons.vim
 au BufNewFile,BufRead SCons* set filetype=scons 
 
-"let mapleader=","
+"let mapleader = ","
 "nnoremap <leader>w <C-w>v<C-w>l
 
 " smooth scrolling: 
