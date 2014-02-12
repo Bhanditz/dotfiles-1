@@ -22,7 +22,8 @@ Bundle 'vim-scripts/a.vim'
 Bundle 'terryma/vim-smooth-scroll'
 Bundle 'steffanc/cscopemaps.vim'
 Bundle 'ervandew/supertab'
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
+Bundle 'wincent/Command-T'
 Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'scrooloose/syntastic'
 
@@ -56,7 +57,7 @@ let g:C_Ctrl_j = 'off'
 " works in conjunction with vim-scripts/scons.vim
 au BufNewFile,BufRead SCons* set filetype=scons 
 
-"let mapleader = ","
+let mapleader = ","
 "nnoremap <leader>w <C-w>v<C-w>l
 
 " smooth scrolling: 
