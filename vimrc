@@ -117,7 +117,7 @@ set incsearch
 set laststatus=2
 
 " use ctags before cscope
-set csto=0
+set csto=1
 
 set statusline=
 set statusline +=%1*\ %n\ %*            "buffer number
@@ -154,7 +154,7 @@ nmap <F4> :TlistToggle <cr> 5<C-h>
 nmap <F5> :NERDTreeToggle <cr>
  
 " open tag in new vertical split
-map <leader>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+map <leader>] :split <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " useful defaults to remember
 " gt -> tabnext
