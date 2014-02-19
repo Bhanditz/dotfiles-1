@@ -16,7 +16,7 @@ Bundle 'vim-scripts/BufOnly.vim'
 Bundle 'L9'
 "Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'vim-scripts/taglist.vim'
-"Bundle 'vim-scripts/c.vim'
+Bundle 'vim-scripts/c.vim'
 Bundle 'vim-scripts/scons.vim'
 Bundle 'vim-scripts/a.vim'
 Bundle 'terryma/vim-smooth-scroll'
@@ -46,6 +46,8 @@ let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_enter_jump_first = 1
 
 set tags=./tags;/
+" jump to first found result
+set nocscopetag
 
 " allow project .vimrc files
 set exrc
