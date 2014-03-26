@@ -1,31 +1,35 @@
 set nocompatible
+
+" set the runtime path to include Vundle and initialise
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 " use Vundle to handle plugins - install from https://github.com/gmarik/vundle
-" run :BundleInstall after installing Vundle to install other plugins
+" run :PluginInstall after installing Vundle to install other plugins
 
-Bundle 'gmarik/vundle'
-Bundle 'desert-warm-256'
-Bundle 'tomasr/molokai'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'scrooloose/nerdtree'
-" Bundle 'craigemery/dotFiles/blob/master/vim/plugin/autotag.vim'
+Plugin 'gmarik/vundle'
+Plugin 'desert-warm-256'
+Plugin 'tomasr/molokai'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdtree'
+" Plugin 'craigemery/dotFiles/blob/master/vim/plugin/autotag.vim'
 " vim scripts plugins
-Bundle 'vim-scripts/BufOnly.vim'
-Bundle 'L9'
-"Bundle 'vim-scripts/FuzzyFinder'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'vim-scripts/c.vim'
-Bundle 'vim-scripts/scons.vim'
-Bundle 'vim-scripts/a.vim'
-Bundle 'terryma/vim-smooth-scroll'
-Bundle 'steffanc/cscopemaps.vim'
-Bundle 'ervandew/supertab'
-"Bundle 'kien/ctrlp.vim'
-Bundle 'wincent/Command-T'
-Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'scrooloose/syntastic'
+Plugin 'vim-scripts/BufOnly.vim'
+Plugin 'L9'
+"Plugin 'vim-scripts/FuzzyFinder'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'vim-scripts/c.vim'
+Plugin 'vim-scripts/scons.vim'
+Plugin 'vim-scripts/a.vim'
+Plugin 'terryma/vim-smooth-scroll'
+Plugin 'steffanc/cscopemaps.vim'
+Plugin 'ervandew/supertab'
+"Plugin 'kien/ctrlp.vim'
+Plugin 'wincent/Command-T'
+Plugin 'Lokaltog/vim-easymotion'
+" Plugin 'scrooloose/syntastic'
+
+filetype plugin indent on
 
 " a.vim doesn't open file which doesn't exist
 let g:alternateNoDefaultAlternate = 1
@@ -139,7 +143,6 @@ set statusline +=%1*%4v\ %*             "virtual column number
 colorscheme vividchalk
 
 syntax on
-filetype plugin indent on
 
 
 " keymaps last to override any plugin settings
