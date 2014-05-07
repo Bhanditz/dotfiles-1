@@ -21,13 +21,16 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/c.vim'
 Plugin 'vim-scripts/scons.vim'
 Plugin 'vim-scripts/a.vim'
+"Plugin 'vim-scripts/ifdef-highlighting'
 Plugin 'terryma/vim-smooth-scroll'
 Plugin 'steffanc/cscopemaps.vim'
 Plugin 'ervandew/supertab'
 "Plugin 'kien/ctrlp.vim'
 Plugin 'wincent/Command-T'
 Plugin 'Lokaltog/vim-easymotion'
-" Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
+Plugin 'myusuf3/numbers.vim'
+Plugin 'godlygeek/tabular'
 
 filetype plugin indent on
 
@@ -50,8 +53,6 @@ let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_enter_jump_first = 1
 
 set tags=./tags;/
-" jump to first found result
-set nocscopetag
 
 " allow project .vimrc files
 set exrc
@@ -76,7 +77,7 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 set t_Co=256
 set autoindent
 set backspace=indent,eol,start
-set smartindent
+set nosmartindent
 set tabstop=8
 set expandtab
 set softtabstop=4
@@ -86,7 +87,7 @@ set shiftwidth=4
 set wrap
 set linebreak
 set nolist
-set relativenumber
+"set relativenumber
 set encoding=utf-8
 set cursorline
 set ignorecase
@@ -94,6 +95,8 @@ set smartcase
 set ruler
 set showcmd
 set autoread
+" required for numbers.vim
+set number
 
 "keep extra files out of the way. double trailing / enables name collision
 "avoidance
@@ -119,6 +122,13 @@ set splitright
 
 set textwidth=80
 set colorcolumn=81
+
+"highlight trailing whitespace
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+au InsertLeave * match ExtraWhitespace /\s\+$/
+"strip trailing whitespace from files of FileType on save TODO doesn't work?
+autocmd FileType c,cpp,java autocmd BufWritePre <buffer> :%s/\s\+$//e
+
 set incsearch
 set laststatus=2
 
@@ -141,9 +151,14 @@ set statusline +=%1*%4v\ %*             "virtual column number
 "let g:C LineEndCommColDefault=0
 
 colorscheme vividchalk
+set background=dark
 
 syntax on
 
+" Python
+"au FileType python set omnifunc=pythoncomplete#Complete
+"let g:SuperTabDefaultCompletionType = "context"
+"set completeopt=menuone,longest,preview
 
 " keymaps last to override any plugin settings
 inoremap jj <Esc>
@@ -160,6 +175,9 @@ nmap <F5> :NERDTreeToggle <cr>
  
 " open tag in new vertical split
 map <leader>] :split <CR>:exec("tag ".expand("<cword>"))<CR>
+
+" jump to first found result
+set nocst
 
 " useful defaults to remember
 " gt -> tabnext
